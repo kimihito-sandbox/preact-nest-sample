@@ -1,0 +1,15 @@
+runtime: nodejs12
+
+entrypoint: npm run start:prod
+
+handlers:
+  - url: /api/.*
+    script: auto
+  - url: /
+    static_files: web_build/index.html
+    upload: web_build/index.html
+  - url: /(.*)
+    static_files: web_build/\1
+    upload: web_build/(.*)
+env_variables:
+  NODE_ENV: 'production'

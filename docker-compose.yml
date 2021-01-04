@@ -1,0 +1,22 @@
+version: '3.7'
+services: 
+  web:
+    build:
+      context: .
+      dockerfile: ./web/Dockerfile
+    command: npm run start
+    volumes:
+      - ./web:/home/node/apps/web
+    ports:
+      - "8081:8080"
+    links:
+      - api
+  api:
+    build:
+      context: .
+      dockerfile: ./api/Dockerfile
+    command: npm run start:dev
+    volumes:
+      - ./api:/home/node/apps/api
+    ports:
+      - "3000:3000"

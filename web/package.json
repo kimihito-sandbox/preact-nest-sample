@@ -7,7 +7,8 @@
     "lint": "prettier --check \"src/**/*.{js,jsx}\""
   },
   "dependencies": {
-    "preact": "^10.0.0"
+    "preact": "^10.0.0",
+    "wouter-preact": "^2.7.0"
   },
   "devDependencies": {
     "@prefresh/snowpack": "^2.0.1",

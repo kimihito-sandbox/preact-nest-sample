@@ -1,5 +1,6 @@
 import { h } from 'preact';
 import { useState, useEffect } from 'preact/hooks';
+import { Link, Route } from 'wouter-preact'
 import logo from './logo.png';
 import './App.css';
 
@@ -33,6 +34,15 @@ function App() {
           </a>
         </p>
       </header>
+
+      <Link href="/users/1">
+        <a className="link">Profile</a>
+      </Link>
+      <Route path="/about">About us</Route>
+      <Route path="/users/:name">
+        {(params) => <div>Hello, {params.name}</div>}
+      </Route>
+
     </div>
   );
 }
